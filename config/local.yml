@@ -1,0 +1,27 @@
+server:
+  port: 8000
+  hmacKey: "c3ZjY29tcGFwaQ=="
+
+# Control plane state service
+database: 
+  host: "127.0.0.1"
+  port: "9042"
+  keyspace: ""
+  consistency: "QUORUM"
+  dbname: "cassandra"
+  dbuser: "cassandra-superuser"
+  dbpass: "RNmOHFq1JUTWLiWVUCRT"
+  
+environments:
+  local:
+    # URL for the Control plane metadata store
+    blobstorageurl: "https://mskorchdev.blob.core.windows.net/local"
+  
+  dev: 
+    # URL for the Control plane metadata store
+    blobstorageurl: "https://mskorchdev.blob.core.windows.net/dev"
+    
+  
+  cdt:
+    # URL for the Control plane metadata store
+    blobstorageurl: "https://mskorchprod.blob.core.windows.net/cdt"
