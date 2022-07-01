@@ -16,6 +16,7 @@ import (
 var once sync.Once
 var DbClient *mongo.Client
 
+// Mongo db driver to manage mongo db connection
 func InitializeDbConnection() *mongo.Client {
 	Logger := utils.Logger
 

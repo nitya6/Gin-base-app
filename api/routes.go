@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Applications rest interface
 func LoadRoutes(router gin.IRouter) {
 
 	v1 := router.Group("/api/v1")

@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// standard cors middleware
 func CORSMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		Logger := utils.Logger

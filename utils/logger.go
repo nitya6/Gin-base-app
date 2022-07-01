@@ -18,6 +18,7 @@ type logConfig struct {
 
 var Logger *zap.Logger
 
+// Initializes Logger with log configs
 func InitializeLogger() {
 
 	config := logConfig{

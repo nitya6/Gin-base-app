@@ -6,6 +6,7 @@ import (
 	"github.com/penglongli/gin-metrics/ginmetrics"
 )
 
+// exporter for prometheus metrics
 func GetMetricsExporter() *ginmetrics.Monitor {
 
 	m := ginmetrics.GetMonitor()
