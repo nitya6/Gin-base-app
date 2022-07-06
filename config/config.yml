@@ -1,6 +1,5 @@
 server:
   port: 8000
-  hmacKey: "c3ZjY29tcGFwaQ=="
   metricsPath: "/vitals"
   metricsPort: 9000
   metricsPrefix: "api_server"
@@ -11,14 +10,5 @@ database:
   
 environments:
   local:
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchdev.blob.core.windows.net/local"
-  
+   
   dev: 
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchdev.blob.core.windows.net/dev"
-    
-  
-  cdt:
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchprod.blob.core.windows.net/cdt"
