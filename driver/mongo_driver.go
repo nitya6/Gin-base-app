@@ -14,7 +14,7 @@ import (
 )
 
 var once sync.Once
-var DbClient *mongo.Client
+var dbClient *mongo.Client
 
 // Mongo db driver to manage mongo db connection
 func InitializeDbConnection() *mongo.Client {
@@ -29,20 +29,28 @@ func InitializeDbConnection() *mongo.Client {
 		}
 
 		Logger.Info("Database client created")
-		DbClient = client
+		dbClient = client
 		if ok, conErr := connectionHealthCheck(); !ok {
 			log.Fatal("DB connection error ", conErr)
 		}
 	})
 
-	return DbClient
+	return dbClient
+
+}
+
+// function to fetch dbConnection
+func GetDBClient() (dbClient *mongo.Client) {
+
+	connectionHealthCheck()
+	return dbClient
 
 }
 
 func connectionHealthCheck() (bool, error) {
 	Logger := utils.Logger
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	pingErr := DbClient.Ping(ctx, nil)
+	pingErr := dbClient.Ping(ctx, nil)
 	if pingErr != nil {
 		Logger.Error("Db Connection error: ", zap.Any("Error", pingErr))
 		return false, pingErr
