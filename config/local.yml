@@ -1,27 +1,14 @@
 server:
   port: 8000
-  hmacKey: "c3ZjY29tcGFwaQ=="
+  metricsPath: "/vitals"
+  metricsPort: 9000
+  metricsPrefix: "api_server"
 
 # Control plane state service
 database: 
-  host: "127.0.0.1"
-  port: "9042"
-  keyspace: ""
-  consistency: "QUORUM"
-  dbname: "cassandra"
-  dbuser: "cassandra-superuser"
-  dbpass: "RNmOHFq1JUTWLiWVUCRT"
+  uri: mongodb://localhost:27017
   
 environments:
   local:
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchdev.blob.core.windows.net/local"
-  
+   
   dev: 
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchdev.blob.core.windows.net/dev"
-    
-  
-  cdt:
-    # URL for the Control plane metadata store
-    blobstorageurl: "https://mskorchprod.blob.core.windows.net/cdt"
